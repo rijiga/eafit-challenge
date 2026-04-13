@@ -1,0 +1,70 @@
+# Avatar Issuer VS Agent deployment — Helm chart values
+#
+# For EAFIT Challenge deployment
+chartSource: oci://registry-1.docker.io/veranalabs/vs-agent-chart
+chartVersion: v1.9.2
+
+global:
+  domain: eafit.verana.network
+
+name: avatar
+replicas: 1
+
+adminPort: 3000
+didcommPort: 3001
+eventsBaseUrl: "https://avatar.eafit.verana.network"
+publicDidMethod: "webvh"
+
+resources:
+  requests:
+    cpu: 100m
+    memory: 256Mi
+  limits:
+    cpu: 500m
+    memory: 512Mi
+
+ingress:
+  host: "avatar.eafit.verana.network"
+  tlsSecret: "avatar.eafit.verana.network-cert"
+  public:
+    enableCors: true
+  private:
+    enableCors: true
+    whitelistSourceRange: ""
+    tlsSecret: ""
+    host: ""
+
+database:
+  enabled: true
+  existingSecret: avatar-db-secret
+  secretPwdKey: POSTGRES_PASSWORD
+  user: vsagent
+  resources:
+    requests:
+      cpu: 50m
+      memory: 128Mi
+    limits:
+      cpu: 250m
+      memory: 256Mi
+
+redis:
+  enabled: true
+  resources:
+    requests:
+      cpu: 25m
+      memory: 64Mi
+    limits:
+      cpu: 100m
+      memory: 128Mi
+
+extraEnv:
+  - name: ENABLE_PUBLIC_API_SWAGGER
+    value: "true"
+  - name: AGENT_LOG_LEVEL
+    value: "3"
+  - name: USE_CORS
+    value: "true"
+
+storage:
+  size: 1Gi
+  storageClassName: csi-cinder-high-speed

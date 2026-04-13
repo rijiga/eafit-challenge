@@ -235,8 +235,8 @@ Your chatbot needs to connect to a language model. You have several options:
 
 | Provider | Recommended model | How to get API key |
 |----------|-------------------|-------------------|
-| **OpenAI** | `gpt-4o-mini` | https://platform.openai.com/api-keys |
-| **Anthropic** | `claude-3-haiku` | https://console.anthropic.com |
+| **OpenAI** | `gpt-5.4-mini` | https://platform.openai.com/api-keys |
+| **Anthropic** | `claude-4.6-sonnet` | https://console.anthropic.com |
 | **Ollama** (local, free) | `llama3` | https://ollama.ai — no API key required |
 
 > **Recommendation for students**: If you don't want to spend money, use **Ollama** with the `llama3` model. It runs locally on your machine. You need at least 8 GB of RAM.
