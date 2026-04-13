@@ -172,7 +172,7 @@ jobs:
           fi
 
           # Discover custom schema from organization DID doc
-          ORG_PUBLIC_URL="https://organization.eafit.verana.network"
+          ORG_PUBLIC_URL="https://organization.eafit.testnet.verana.network"
 
           ORG_DID_DOC=$(curl -sf "${ORG_PUBLIC_URL}/.well-known/did.json")
           CUSTOM_VP_URL=$(echo "$ORG_DID_DOC" | jq -r '

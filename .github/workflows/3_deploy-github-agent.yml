@@ -175,7 +175,7 @@ jobs:
           CHILD_DID=$(curl -sf "${CHILD_ADMIN_API}/v1/agent" | jq -r '.publicDid')
           echo "GitHub Agent DID: $CHILD_DID"
 
-          CHILD_PUBLIC_URL="https://github-agent.eafit.verana.network"
+          CHILD_PUBLIC_URL="https://github-agent.eafit.testnet.verana.network"
           if has_linked_vp "$CHILD_PUBLIC_URL" "service"; then
             ok "Service credential already linked — skipping"
           else
@@ -212,6 +212,6 @@ jobs:
         run: |
           echo "## GitHub Agent VS" >> "$GITHUB_STEP_SUMMARY"
           echo "" >> "$GITHUB_STEP_SUMMARY"
-          echo "- **VS Agent:** https://github-agent.eafit.verana.network/.well-known/did.json" >> "$GITHUB_STEP_SUMMARY"
+          echo "- **VS Agent:** https://github-agent.eafit.testnet.verana.network/.well-known/did.json" >> "$GITHUB_STEP_SUMMARY"
           echo "- **Network:** testnet" >> "$GITHUB_STEP_SUMMARY"
           echo "- **Chart:** ${CHART_SOURCE}:${CHART_VERSION}" >> "$GITHUB_STEP_SUMMARY"

@@ -5,14 +5,14 @@ chartSource: oci://registry-1.docker.io/veranalabs/vs-agent-chart
 chartVersion: v1.9.2
 
 global:
-  domain: eafit.verana.network
+  domain: eafit.testnet.verana.network
 
 name: avatar
 replicas: 1
 
 adminPort: 3000
 didcommPort: 3001
-eventsBaseUrl: "https://avatar.eafit.verana.network"
+eventsBaseUrl: "https://avatar.eafit.testnet.verana.network"
 publicDidMethod: "webvh"
 
 resources:
@@ -24,8 +24,8 @@ resources:
     memory: 512Mi
 
 ingress:
-  host: "avatar.eafit.verana.network"
-  tlsSecret: "avatar.eafit.verana.network-cert"
+  host: "avatar.eafit.testnet.verana.network"
+  tlsSecret: "avatar.eafit.testnet.verana.network-cert"
   public:
     enableCors: true
   private:

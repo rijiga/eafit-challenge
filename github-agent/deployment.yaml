@@ -6,12 +6,12 @@
 #   - Redis (vector store, memory, queues)
 #   - PostgreSQL (session persistence)
 #
-# Deployment target: eafit.verana.network
+# Deployment target: eafit.testnet.verana.network
 chartSource: oci://registry-1.docker.io/io2060/hologram-generic-ai-agent-chart
 chartVersion: v1.11.2
 
 global:
-  domain: eafit.verana.network
+  domain: eafit.testnet.verana.network
 
 nameOverride: 'github-agent-chart'
 
